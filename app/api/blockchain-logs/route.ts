@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cosmic, hasStatus } from '@/lib/cosmic'
+import { BlockchainLog } from '@/types'
 
 export async function GET(request: Request) {
   try {
@@ -19,7 +20,8 @@ export async function GET(request: Request) {
       .limit(limit)
 
     // Manual sorting by timestamp (newest first)
-    const sortedLogs = response.objects.sort((a, b) => {
+    // Changed: Added explicit type annotations to fix TS7006 errors
+    const sortedLogs = (response.objects as BlockchainLog[]).sort((a: BlockchainLog, b: BlockchainLog) => {
       const dateA = new Date(a.metadata?.timestamp || a.created_at || '').getTime()
       const dateB = new Date(b.metadata?.timestamp || b.created_at || '').getTime()
       return dateB - dateA
