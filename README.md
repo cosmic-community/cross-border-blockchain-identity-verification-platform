@@ -22,5 +22,3 @@ Want to create your own version of this project with all the content and structu
 [![Clone this Project](https://img.shields.io/badge/Clone%20this%20Project-29abe2?style=for-the-badge&logo=cosmic&logoColor=white)](https://app.cosmicjs.com/projects/new?clone_bucket=691c0bd5b183692bb397a1fd&clone_repository=691c0f91b183692bb397a217)
 
 ## 📁 Project Structure
-
-This project is organized into a separate frontend folder:
